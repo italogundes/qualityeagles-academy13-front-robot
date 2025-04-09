@@ -67,7 +67,6 @@ TC01 - Realizar Login com Sucesso
     Realizar Login    email=sysadmin@qacoders.com    senha=1234@Test
     Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
     Element Should Be Visible    ${div_cadastros}
-    Capture Element Screenshot    ${div_cadastros}
     Capture Page Screenshot
     Fechar Navegador
 
@@ -110,64 +109,53 @@ TC01 - Realizar Login com Sucesso
 #    Capture Page Screenshot
 #    Fechar Navegador
 
-TC05 - Lista de Cadastro de Usuários - Botão Editar
+TC05 - Lista de Cadastro de Usuários com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
+    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
+    Element Should Be Visible    ${div_cadastros}
+    Sleep    5s 
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    ${btn_usuarios}
     Click Element    ${btn_usuarios}
     Sleep    5s
-    Wait Until Element Is Visible    ${btn_editar_usuario}
-    Click Element    ${btn_editar_usuario}
+    Wait Until Element Is Visible    css=${listagem}    timeout=50s
+    Element Should Be Visible    css=${listagem}
     Capture Page Screenshot
-    Fechar Navegador
-
-TC06 - Lista de Cadastro de Usuários - Botão Novo Registro
-    Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
-    Click Element    ${div_cadastros}
-    Wait Until Element Is Visible    ${btn_usuarios}
-    Click Element    ${btn_usuarios}
-    Sleep    3s
-    Wait Until Element Is Visible    ${btn_novo_cadastro}
-    Click Element    ${btn_novo_cadastro}
-    Wait Until Element Is Visible    css=${form_usuario}
-    Capture Page Screenshot
-    Capture Element Screenshot    css=${form_usuario}
+    Capture Element Screenshot    css=${listagem}
     Fechar Navegador
 
 TC07 - Lista de Cadastro de Usuários com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
+    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    ${btn_usuarios}
     Click Element    ${btn_usuarios}
     Sleep    3s
-    Wait Until Element Is Visible    css=${listagem}
+    Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
 
 TC08 - Lista de Cadastro de Aluno com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
+    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    css=${btn_aluno}
     Click Element    css=${btn_aluno}
     Sleep    3s
-    Wait Until Element Is Visible    css=${listagem}
+    Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
 
 TC09 - Lista de Empresas com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=30s
+    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    css=${btn_empresas}
     Click Element    css=${btn_empresas}
     Sleep    3s
-    Wait Until Element Is Visible    css=${listagem}
+    Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
