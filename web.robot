@@ -115,7 +115,7 @@ TC05 - Lista de Cadastro de Usuários com Sucesso
     Element Should Be Visible    ${div_cadastros}
     Sleep    5s 
     Click Element    ${div_cadastros}
-    Wait Until Element Is Visible    ${btn_usuarios}
+    Wait Until Element Is Visible    ${btn_usuarios} 
     Click Element    ${btn_usuarios}
     Sleep    5s
     Wait Until Element Is Visible    css=${listagem}    timeout=50s
@@ -253,7 +253,7 @@ Preencher Form de Cadastro de Aluno
     [Documentation]       Keyword usada para realizar cadastro de um novo aluno
     [Arguments]    ${nomeCompleto}    ${dataNascimento}    ${email}    ${telefone}    ${cargo}    ${rg}    ${cpf}    ${cep}    ${pais}    ${cidade}    ${estado}    ${bairro}    ${rua}    ${numero}    ${complemento}
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}
+    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    css=${btn_aluno}
     Click Element    css=${btn_aluno}
