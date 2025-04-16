@@ -9,7 +9,7 @@ ${URL}    https://quality-eagles-front.qacoders.dev.br/login
 ${BROWSER}    Chrome
 
 #Inputs
-${input_fullName}    input[id=fullName]
+${input_fullName}    xpath=//input[@id="fullName"]
 ${input_mail_user}    input[id=mail]
 ${accessProfile}    xpath=//select[@id="Perfil de Acesso*"]
 ${input_cpf}    input[id=cpf]
@@ -109,46 +109,44 @@ TC01 - Realizar Login com Sucesso
 #    Capture Page Screenshot
 #    Fechar Navegador
 
-TC05 - Lista de Cadastro de Usuários com Sucesso
+TC02 - Lista de Cadastro de Usuários com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
     Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
     Element Should Be Visible    ${div_cadastros}
-    Sleep    5s 
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    ${btn_usuarios} 
     Click Element    ${btn_usuarios}
-    Sleep    5s
     Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Element Should Be Visible    css=${listagem}
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
-    
-TC08 - Lista de Cadastro de Aluno com Sucesso
+
+TC03 - Lista de Cadastro de Aluno com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
     Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
+    Element Should Be Visible    ${div_cadastros}
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    css=${btn_aluno}
     Click Element    css=${btn_aluno}
-    Sleep    3s
     Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
 
-TC09 - Lista de Empresas com Sucesso
+TC04 - Lista de Empresas com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
     Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
+    Element Should Be Visible    ${div_cadastros}
     Click Element    ${div_cadastros}
     Wait Until Element Is Visible    css=${btn_empresas}
     Click Element    css=${btn_empresas}
-    Sleep    3s
     Wait Until Element Is Visible    css=${listagem}    timeout=50s
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
 
-TC10 - Realizar Cadastro de Aluno com Sucesso
+TC5 - Realizar Cadastro de Aluno com Sucesso
     ${client}    Get Fake Client
     Preencher Form de Cadastro de Aluno    
     ...    nomeCompleto=${client}[name]    
@@ -201,7 +199,7 @@ Preencher Form de Cadastro de Usuario
     Wait Until Element Is Visible    ${btn_novo_cadastro}
     Element Should Be Visible    ${btn_novo_cadastro}
     Click Button    ${btn_novo_cadastro}
-    Input Text    css=${input_fullName}    ${fullName}
+    Input Text    ${input_fullName}    ${fullName}
     Input Text    css=${input_mail_user}    ${email}
     Select From List By Label    ${accessProfile}    Administrador
     Input Text    css=${input_cpf}    ${cpf}
@@ -248,7 +246,7 @@ Preencher Form de Cadastro de Aluno
     Wait Until Element Is Visible    css=${listagem}
     Click Button    ${btn_novo_cadastro}
     #Wait Until Element Is Visible    css=${form_cadastro}    timeout=30s
-    Input Text    css=${input_fullName}    ${nomeCompleto}
+    Input Text    ${input_fullName}    ${nomeCompleto}
     Input Text    css=${input_dataNascimento}    ${dataNascimento}
     Input Text    css=${input_mail_user}    ${email}
     Input Text    css=${input_telefone}    ${telefone}
