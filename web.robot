@@ -123,19 +123,7 @@ TC05 - Lista de Cadastro de Usuários com Sucesso
     Capture Page Screenshot
     Capture Element Screenshot    css=${listagem}
     Fechar Navegador
-
-TC07 - Lista de Cadastro de Usuários com Sucesso
-    Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
-    Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
-    Click Element    ${div_cadastros}
-    Wait Until Element Is Visible    ${btn_usuarios}
-    Click Element    ${btn_usuarios}
-    Sleep    3s
-    Wait Until Element Is Visible    css=${listagem}    timeout=50s
-    Capture Page Screenshot
-    Capture Element Screenshot    css=${listagem}
-    Fechar Navegador
-
+    
 TC08 - Lista de Cadastro de Aluno com Sucesso
     Realizar Login    email=sysadmin@qacoders.com     senha=1234@Test
     Wait Until Element Is Visible    ${div_cadastros}    timeout=50s
