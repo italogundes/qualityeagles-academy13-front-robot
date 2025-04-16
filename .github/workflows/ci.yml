@@ -46,7 +46,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: https://italogundes.github.io/academy-robot-web/report.html
+      url: https://italogundes.github.io/qualityeagles-academy13-front-robot/report.html
 
     steps:
       - name: Setup Pages
